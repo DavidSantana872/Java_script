@@ -36,7 +36,7 @@ function mostrar_texto(palabra){
     let boton = document.getElementById("btn");
     boton.style.display = "block";
     try{ 
-        caja_texto.removeChild(document.querySelector("p"))
+        caja_texto.removeChild(document.getElementById("notext"))
         caja_texto.removeChild(document.querySelector("img"))
     }
     catch{
