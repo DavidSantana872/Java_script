@@ -41,7 +41,8 @@ function mostrar_texto(palabra){
     }
     catch{
 
-    }let new_Element = document.createElement("p")
+    }
+    let new_Element = document.createElement("p")
     new_Element.id = "textonuevo";
     new_Element.innerHTML = palabra;
     caja_texto.appendChild(new_Element)
@@ -86,4 +87,31 @@ function desencriptar(){
        
     }
     mostrar_texto(new_word)
+}
+
+function copyText() {
+
+    let texto = document.getElementById("textonuevo").innerText;
+  
+    // Comprobando si el navegador soporta la API de Portapapeles de HTML5
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(texto);
+    } else {
+      //createTextRange() de Internet Explorer
+      let textRange = document.body.createTextRange();
+      textRange.moveToElementText(document.getElementById("textonuevo"));
+      textRange.select();
+      document.execCommand("copy");
+    }
+    animacion();
+
+  }
+function animacion(){
+    let elemento = document.getElementById("container")
+    elemento.style.display = "flex"
+    setTimeout(animacion2, 1200);
+}
+function animacion2(){
+    let elemento = document.getElementById("container")
+    elemento.style.display = "none"
 }
