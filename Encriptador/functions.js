@@ -1,4 +1,4 @@
-// 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
+
 function get_value(){
     let element = document.getElementById("campoentrada");
     let valor = element.value;
